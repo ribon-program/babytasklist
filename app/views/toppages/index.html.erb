@@ -51,11 +51,18 @@
 <footer>
   <div id="footer_navi">
     <ul>
-      <li><a href="">問い合わせ</a></li>
+      <li><a href="">お問い合わせ</a></li>
+      <li><%= link_to '管理者のページ', login_path %></li>
       <li><a href="/">トップページへ</a></li>
     </ul>
   </div>
   <small>&copy; 2018 妊娠・出産・育児タスクリスト</small>
 </footer>
 <!--フッターここまで-->
+
+<!-- ログイン後のトップページ -->
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% end %>  
+<!-- ログイン後のトップページここまで-->
 
