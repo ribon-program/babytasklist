@@ -1,0 +1,28 @@
+<h1>id: <%= @article.id %> の記事編集ページ</h1>
+
+<%= form_for(@article) do |f| %>
+  <%= f.label :title, 'タイトル' %><br>
+  <%= f.text_field :title, class: 'form-control' %>
+<br> 
+<br>
+
+  <%= f.label :content, '記事' %><br>
+  <%= f.cktext_area :content %>
+<br>
+<br>
+<p>カテゴリー(event_id)</p>
+
+  <%= f.collection_select :event_id, Event.all, :id, :name %>
+<br>
+<br>
+<p>カテゴリー(place_id)</p>
+  
+  <%= f.collection_select :place_id, Place.all, :id, :name %>  
+<br>
+<br>
+  <%= f.submit '投稿', class: 'btn btn-primary'  %>
+  
+<% end %>
+<br>
+<%= link_to '一覧に戻る', user_path(current_user) %>
+

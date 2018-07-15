@@ -1,0 +1,37 @@
+<h4>育児タスクリスト</h4>
+
+<% if @articles.any? %>
+  <table style="border-style: none;">
+    
+    <tbody>
+      
+      <% @articles.each do |article| %>
+        <tr>
+          <!--<td><%= link_to article.id, article %></td>
+          <td><%= link_to article.title, article %></td> -->
+          <td><%== article.content %></td>
+    <!-- <td><%= article.event.name %></td>
+          <td><%= article.place.name %></td> -->
+          
+        </tr>
+      <% end %>  
+    </tbody>  
+  </table>
+  <div>
+    <%#= paginate @articles %>
+  </div>
+<% end %>
+<!--ここからフッター-->
+<footer>
+  <div id="footer_navi">
+    <ul>
+      <li><a href="/articles/pregnant">妊娠タスクリスト</a></li>
+      <li><a href="/articles/birth">出産タスクリスト</a></li>
+      <li><a href="/articles/child_care">育児タスクリスト</a></li>
+      <li><a href="/">妊娠・出産・育児タスクリストTOPへ</a></li>
+      <li><%= link_to '管理者のページ', login_path %></li>
+    </ul>
+  </div>
+  <small>&copy; 2018 妊娠・出産・育児タスクリスト</small>
+</footer>
+<!--フッターここまで-->

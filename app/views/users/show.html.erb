@@ -1,0 +1,38 @@
+<h4>妊娠タスクリスト</h4>
+
+<% if @articles.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>タイトル</th>
+        <th>記事</th>
+        <th>カテゴリー(event_id)</th>
+        <th>カテゴリー(place_id)</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= link_to article.id, article %></td>
+          <td><%= link_to article.title, article %></td>
+          <td><%== article.content %></td>
+          <td><%= article.event.name %></td>
+          <td><%= article.place.name %></td>
+          <!-- <td>
+           <div>
+            <% if current_user == article.user %>
+             <%= link_to "この記事を削除する", article, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %>
+            <% end %>
+           </div>
+          </td> -->
+        </tr>
+      <% end %>  
+    </tbody>  
+  </table>
+  <div>
+    <%#= paginate @articles %>
+  </div>
+<% end %>
+

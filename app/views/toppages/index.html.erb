@@ -21,9 +21,9 @@
   
   <div id="menu_navi">
     <ul class="inline-block">
-      <li><a href="#">妊娠</a></li>
-      <li><a href="#">出産</a></li>
-      <li><a href="#">育児</a></li>
+      <li><a href="/articles/pregnant">妊娠</a></li>
+      <li><a href="/articles/birth">出産</a></li>
+      <li><a href="/articles/child_care">育児</a></li>
     </ul>
   </div>
   <!--メインここまで-->
@@ -62,7 +62,10 @@
 
 <!-- ログイン後のトップページ -->
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <!-- <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <li><%= link_to 'User', users_path %></li>
+  <li><%= link_to 'My profile', user_path(current_user) %></li> -->
+
+  
 <% end %>  
 <!-- ログイン後のトップページここまで-->
-

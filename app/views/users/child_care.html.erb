@@ -1,0 +1,23 @@
+<h4>育児タスクリスト</h4>
+
+<% if @articles.any? %>
+  <table style="border-style: none;">
+    
+    <tbody>
+      
+      <% @articles.each do |article| %>
+        <tr>
+          <!--<td><%= link_to article.id, article %></td>
+          <td><%= link_to article.title, article %></td> -->
+          <td><%== article.content %></td>
+    <!-- <td><%= article.event.name %></td>
+          <td><%= article.place.name %></td> -->
+          
+        </tr>
+      <% end %>  
+    </tbody>  
+  </table>
+  <div>
+    <%#= paginate @articles %>
+  </div>
+<% end %>
