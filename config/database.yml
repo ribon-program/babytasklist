@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: babytasklist_production
   username: babytasklist
   password: <%= ENV['BABYTASKLIST_DATABASE_PASSWORD'] %>
